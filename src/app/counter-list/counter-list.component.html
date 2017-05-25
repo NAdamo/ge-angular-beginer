@@ -1,0 +1,3 @@
+<h1>{{currentCounter}}</h1>
+
+<app-counter *ngFor="let counter of counterArray" [counter]="counter" (counterClick)="onCounterChange($event)"></app-counter>

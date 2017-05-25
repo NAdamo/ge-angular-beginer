@@ -1,0 +1,13 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" name="name" id="name" [(ngModel)]="course.name" required
+             #nameInput="ngModel">
+      <div class="alert alert-danger" *ngIf="nameInput.errors && (nameInput.dirty || nameInput.touched)">
+        <div [hidden]="!nameInput.errors.required">Name is required</div>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>
