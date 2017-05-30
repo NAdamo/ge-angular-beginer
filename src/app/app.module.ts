@@ -9,6 +9,7 @@ import { TestCliComponent } from './test-cli/test-cli.component';
 import { CounterComponent } from './counter/counter.component';
 import { CounterListComponent } from './counter-list/counter-list.component';
 import { CourseFormComponent } from './course-form/course-form.component';
+import {CourseInitiatorService} from './course-initiator.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { CourseFormComponent } from './course-form/course-form.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [CourseInitiatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
