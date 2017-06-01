@@ -1,5 +1,5 @@
-<div>
-  {{counter}}
-  <button (click)="decrease()">Decrease</button>
-  <button (click)="increase()">Increase</button>
+<div class="well">
+  <div [style.color]="color">This is {{counterIndex}}. counter. The current value is: {{counter}}</div>
+  <button class="btn btn-primary" (click)="decrease()">Decrease</button>
+  <button class="btn btn-primary" (click)="increase()">Increase</button>
 </div>
