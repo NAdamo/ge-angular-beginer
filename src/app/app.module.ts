@@ -11,6 +11,7 @@ import { CounterListComponent } from './counter-list/counter-list.component';
 import { CourseFormComponent } from './course-form/course-form.component';
 import {CourseInitiatorService} from './course-initiator.service';
 import {CourseService} from './course.service';
+import { StarWarsPeopleComponent } from './starwars/star-wars-people/star-wars-people.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {CourseService} from './course.service';
     TestCliComponent,
     CounterComponent,
     CounterListComponent,
-    CourseFormComponent
+    CourseFormComponent,
+    StarWarsPeopleComponent
   ],
   imports: [
     BrowserModule,

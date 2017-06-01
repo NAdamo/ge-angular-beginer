@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+  <tr>
+    <td>{{'name' | titlecase}}</td>
+    <td>{{'height' | titlecase}}</td>
+    <td>{{'mass' | titlecase}}</td>
+    <td>{{'hair color' | titlecase}}</td>
+    <td>{{'skin color' | titlecase}}</td>
+    <td>{{'gender' | titlecase}}</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let people of peoples">
+    <td>{{people.name | titlecase}}</td>
+    <td>{{people.height}}</td>
+    <td>{{people.mass }}</td>
+    <td>{{people.hair_color | titlecase}}</td>
+    <td>{{people.skin_color| titlecase}}</td>
+    <td>{{people.gender | titlecase}}</td>
+  </tr>
+  </tbody>
+</table>
