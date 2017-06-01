@@ -1,5 +1,8 @@
 import {Injectable} from '@angular/core';
 import {StarWarsPeople} from './star-wars-people';
+import {Observable} from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+import {Http} from '@angular/http';
 
 @Injectable()
 export class StarWarsPeopleService {
@@ -21,12 +24,18 @@ export class StarWarsPeopleService {
       gender: 'male'
     }
   ];
+  private api_url = 'http://swapi.co/api/people';
 
-  constructor() {
+  constructor(private http: Http) {
   }
 
-  getPeoples() {
-    return this.starWarsPeople;
+  getPeoples(): Observable<StarWarsPeople[]> {
+    //return this.starWarsPeople;
+    //return Observable.of(this.starWarsPeople);
+    return this.http.get(this.api_url).map((res) => {
+      console.log(res);
+      return res.json().results;
+    });
   }
 
 }

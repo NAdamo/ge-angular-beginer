@@ -7,7 +7,7 @@ import {CourseInitiatorService} from '../course-initiator.service';
 import {CourseService} from '../course.service';
 
 
-fdescribe('CourseFormComponent', () => {
+xdescribe('CourseFormComponent', () => {
   let component: CourseFormComponent;
   let fixture: ComponentFixture<CourseFormComponent>;
 

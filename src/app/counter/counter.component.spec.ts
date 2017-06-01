@@ -41,12 +41,25 @@ fdescribe('CounterComponent', () => {
     expect(component.counter).toBe(101);
   });
 
+  function clickButton(which: number) {
+    const button = fixture.debugElement.queryAll(By.css('button'))[which];
+    button.triggerEventHandler('click', null);
+    fixture.detectChanges();
+  }
+
   it('should increment counters value when increase button clicked', () => {
     component.counter = 100;
     fixture.detectChanges();
-    const button = fixture.debugElement.queryAll(By.css('button'))[1];
-    button.triggerEventHandler('click', null);
-    fixture.detectChanges();
+    clickButton(1)
     expect(component.counter).toBe(101);
   });
+
+  it('should send a counterClicked event with the actual value, when the increase button is clicked', async((done) => {
+    let lastEvent = 0;
+    component.counterClick.subscribe(event => lastEvent = event);
+    component.counter = 100;
+    fixture.detectChanges();
+    clickButton(1);
+    expect(lastEvent).toBe(101);
+  }));
 });

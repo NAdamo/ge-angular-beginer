@@ -12,7 +12,8 @@ export class StarWarsPeopleComponent implements OnInit {
   peoples: StarWarsPeople[];
 
   constructor(private service: StarWarsPeopleService) {
-    this.peoples = service.getPeoples();
+    this.peoples = [];
+    service.getPeoples().subscribe(res => this.peoples = res);
   }
 
   ngOnInit() {
