@@ -13,6 +13,7 @@ export class CounterComponent implements OnInit {
   counterClick = new EventEmitter<number>()
 
   constructor() {
+    this.counter = 0;
   }
 
   ngOnInit() {

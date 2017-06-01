@@ -6,7 +6,7 @@ import {CourseService} from '../course.service';
   selector: 'app-course-form',
   templateUrl: './course-form.component.html',
   styleUrls: ['./course-form.component.css'],
-  providers: [CourseService]
+  providers: []
 })
 export class CourseFormComponent implements OnInit {
   course: Course;

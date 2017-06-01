@@ -1,7 +1,12 @@
 import {Injectable} from '@angular/core';
 import {Course, CourseType} from './course';
+
+export interface CourseInitiatorInterface {
+  init(Course);
+}
+
 @Injectable()
-export class CourseInitiatorService {
+export class CourseInitiatorService implements CourseInitiatorInterface{
 
   constructor() {
   }
